@@ -44,7 +44,7 @@ def movie_image_path(instance: "Movie", filename: str) -> str:
         f"{slugify(instance.title)}-{uuid.uuid4()}"
         + pathlib.Path(filename).suffix
     )
-    return pathlib.Path("upload-image/") / pathlib.Path(filename)
+    return str(pathlib.Path("uploads/movies/") / filename)
 
 
 class Movie(models.Model):
